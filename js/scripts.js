@@ -1,20 +1,4 @@
 $(document).ready(function () {
-  $(".flexslider").flexslider({
-    animation: "slide",
-  });
-
-  $(".single_image").fancybox({
-    padding: 4,
-  });
-
-  $(".fancybox").fancybox({
-    padding: 4,
-    width: 1000,
-    height: 800,
-  });
-
-  $('[data-toggle="tooltip"]').tooltip();
-
   $(".nav-toggle").click(function () {
     $(this).toggleClass("active");
     $(".header-nav").toggleClass("open");
