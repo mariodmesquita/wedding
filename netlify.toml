@@ -1,0 +1,27 @@
+[build]
+  # Build command - now uses the gulp build task we just created
+  command = "gulp build"
+  
+  # Published directory - root directory since this is a static site
+  publish = "."
+
+# Optional: Configure headers for better performance
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
