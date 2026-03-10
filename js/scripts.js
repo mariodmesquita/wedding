@@ -80,7 +80,7 @@ $(document).ready(function () {
         {
           scrollTop: targetPosition,
         },
-        1500,
+        1500
       );
     }
   }
