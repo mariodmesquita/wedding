@@ -386,9 +386,11 @@ header {
       a {
         color: $txt-light;
         padding-right: 25px;
+        transition: transform 300ms ease-in-out;
+        display: inline-block;
 
         &:hover {
-          color: $accent-color;
+          transform: scale(1.1);
         }
       }
       &:last-child a {
@@ -402,9 +404,11 @@ header {
 
       a {
         color: $txt-light;
+        transition: transform 300ms ease-in-out;
+        display: inline-block;
 
         &:hover {
-          color: $accent-color;
+          transform: scale(1.1);
         }
       }
     }
@@ -922,6 +926,61 @@ Section spacing adjustments
   }
 }
 
+/* ==========================================================================
+Tablet layout fixes (768px - 991px)
+========================================================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  // Fix colunas que ficam encostadas à esquerda em tablets
+  .col-md-10 {
+    width: 90%;
+    margin: 0 auto;
+    float: none;
+  }
+  
+  .col-md-8 {
+    width: 85%;
+    margin: 0 auto;
+    float: none;
+  }
+  
+  .col-md-6 {
+    width: 80%;
+    margin: 0 auto 30px;
+    float: none;
+  }
+  
+  .col-md-12 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  // Seções com melhor espaçamento
+  .section-padding {
+    padding: 50px 0;
+  }
+  
+  // Cards de informações com melhor espaçamento (agora 2 colunas)
+  #informacoes .col-md-6 {
+    margin-bottom: 40px;
+    
+    .card {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 350px;
+    }
+  }
+  
+  // Mapa seção com melhor responsividade
+  #map iframe {
+    height: 300px;
+  }
+}
+
 footer {
   .content {
     border-top: 1px solid $keyline-color;
@@ -937,6 +996,12 @@ footer {
     height: 50px;
     border: 1px solid $keyline-color;
     background: #fff;
+    transition: all .3s ease-in-out;
+    
+    &:hover {
+      border-color: $palette-accent;
+      box-shadow: 0 2px 8px rgba(103, 110, 140, 0.2);
+    }
   }
   .to-top-wrapper .to-top {
     display: block;
@@ -945,9 +1010,11 @@ footer {
     -ms-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    color: $palette-accent;
   }
   .to-top-wrapper .to-top:hover {
     margin-top: -5px;
+    color: $accent-color-hover;
   }
   span.fa-heart {
     color: #ff415c;
@@ -959,6 +1026,32 @@ footer {
 /* ==========================================================================
 Bootstrap override
 ========================================================================== */
+
+/* ==========================================================================
+NIB Copy functionality styles
+========================================================================== */
+#copy-nib {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: rgba(103, 110, 140, 1) !important;
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+#nib-number {
+  color: rgba(28, 54, 83, 0.9) !important;
+  font-weight: bold !important;
+  
+  // Force correct color on mobile devices
+  -webkit-text-fill-color: rgba(28, 54, 83, 0.9) !important;
+  -webkit-appearance: none !important;
+}
+
 body.modal-open {
   padding-right:0 !important;
 }
