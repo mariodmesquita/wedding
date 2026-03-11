@@ -912,16 +912,26 @@ RSVP form
 /* ==========================================================================
 Footer
 ========================================================================== */
+/* ==========================================================================
+Section spacing adjustments
+========================================================================== */
+// Reduce section padding bottom on desktop to minimize footer spacing
+@media (min-width: 768px) {
+  #map.section-padding {
+    padding-bottom: 20px; // Reduzir de 40px para 20px em desktop
+  }
+}
+
 footer {
   .content {
     border-top: 1px solid $keyline-color;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   .to-top-wrapper {
     font-size: 30px;
     display: block;
     cursor: pointer;
-    margin: -25px auto 50px;
+    margin: -25px auto 25px;
     border-radius: 50%;
     width: 50px;
     height: 50px;
